@@ -1,189 +1,79 @@
+Context-Bound Authority Applicability and Human Decision Revalidation in Agentic AI
+===================================================================================
 
-.. raw:: latex
+Candidate technical requirements and assessment cases derived from UC-6
 
-    \pagestyle{plain}
-    \thispagestyle{plain}
-    %% Suppress all TOC entries for the overview chapter (sections, subsections,
-    %% Copyright addcontentsline) — restored just before \sphinxtableofcontents
-    %% so chapters from Introduction onward appear in the TOC normally.
-    \let\osiaorigaddcontentsline\addcontentsline
-    \renewcommand{\addcontentsline}[3]{}
-
-.. _chapter-overview:
-
-.. only:: html
-
-    .. admonition:: This is a document template
-        :class: tip
-
-        Replace the ``<placeholders>`` and the *lorem ipsum* text throughout with
-        your own content. This landing page is the document's front matter:
-
-        * **Abstract**, **History**, **Authors**, **Keywords** and **Foreword**
-          are standard front-matter sections — keep them and fill them in.
-        * **Chapters 1–4** demonstrate the authoring system (text, figures,
-          tables, diagrams, and API references). Read them, then replace their
-          content with your specification.
-
-        This notice appears on the web version only; it is excluded from the
-        published PDF. See the project ``CONTRIBUTING`` guide for how to build and publish.
-
-Title of this document
-========================
-
-.. only:: html
-
-    **<subtitle of this document>**
-
-.. raw:: latex
-
-    \begin{center}\textbf{<subtitle of this document>}\end{center}
+Prepared for consideration  •  First FG-TIDA meeting, Paris  •  30 November–1 December 2026
 
 Abstract
 --------
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor
-incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+An agentic AI system may retain the same identity, authority grant and technical operation while the purpose or another condition material to the applicability of that grant changes. A recorded human decision may remain valid as a historical decision without authorizing the changed action. Treating the continued existence of these objects as sufficient evidence of current applicability creates a trust-lifecycle interoperability problem.
 
-Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-culpa qui officia deserunt mollit anim id est laborum.
+This contribution proposes a bounded set of implementation-neutral requirements for identifying the context of an existing authority or human-oversight determination, identifying a material change, obtaining reassessment from the responsible function, and preserving the resulting applicability outcome across trust functions. It builds on the controlled FG-TIDA UC-6 purpose-change case, in which the agent, grant, action, documents and requester remain fixed while the declared purpose changes. The proposal complements authority provenance, authorization and privilege management, runtime enforcement, operational human oversight and evidence-driven re-evaluation work; it does not define a new authorization mechanism, policy language or human-confirmation protocol.
+
+This contribution requests review of a bounded requirements and assessment annex derived from UC-6 for integration into the appropriate existing or emerging FG-TIDA workstream. It does not request a separate Working Group or claim adoption of a new deliverable.
 
 History
 -------
 
 .. list-table::
-    :header-rows: 1
-    :widths: 10 26 18 14 32
+   :header-rows: 1
+   :widths: 8 38 14 12 28
 
-    * - Version
-      - Document
-      - Approval
-      - Focus Group
-      - Working Group
-    * - <version>
-      - <title>
-      - <date>
-      - TIDA
-      - <acronym>
-
-To access this Document as a PDF, open the published documentation site in your web
-browser and click the PDF download link, or navigate directly to
-https://debora-com.github.io/CUTEspecs/specification.pdf.
+   * - Version
+     - Document
+     - Approval
+     - Focus Group
+     - Working Group
+   * - 0.1
+     - Proposed technical input, 24 November 2026
+     - Not adopted
+     - TIDA
+     - Allocation pending
 
 Authors
 -------
 
 .. list-table::
-    :header-rows: 1
-    :widths: 30 40 30
+   :header-rows: 1
+   :widths: 25 35 40
 
-    * - Name
-      - Affiliation
-      - Contact
-    * - <Jane Doe>
-      - <Organization / Company>
-      - <jane.doe@example.com>
-    * - <John Smith>
-      - <Organization / Company>
-      - <john.smith@example.com>
+   * - Name
+     - Affiliation
+     - Contact
+   * - Arpita Sarker
+     - Forkit AI
+     - a.sarker@forkit.dev
 
 Keywords
 --------
 
-Lorem, ipsum, dolor, consectetur, adipiscing.
-
-.. raw:: latex
-
-    \newpage
-    \osiacenternextsection
+Agentic AI, trust lifecycle, context applicability, authority, human oversight, revalidation, interoperability, UC-6.
 
 Foreword
 --------
 
-Agentic AI systems now act as autonomous entities capable of reasoning, planning, and
-executing tasks across services, infrastructures, and organizational boundaries. This
-fundamentally changes the nature of identity in digital systems: identity is no longer
-limited to human users and static machine instances but must also encompass autonomous,
-dynamic, and goal-oriented agents. And identity alone is insufficient — the core question
-extends beyond "what an entity is" to "whether, and under what conditions, that entity
-should be trusted to act".
-
-The Focus Group on Trust and Identity for humans and agentic AI (FG-TIDA) addresses trust
-management and interoperable digital identity infrastructure for humans and for agentic AI,
-supporting the development of secure, trustworthy digital ecosystems in which humans and
-agentic AI can safely interact and collaborate.
-
-FG-TIDA was established under Recommendation ITU-T A.7 (Focus groups: Establishment and
-working procedures), with ITU-T Study Group 17 as its parent group. Further details are
-available in the group's terms of reference.
-
-For more news and updates about the TIDA Community, including its supporter organizations,
-please refer to the community's published resources.
-
-.. raw:: latex
-
-    \osiacenternextsection
+The ITU-T Focus Group on Trust and Identity for Humans and Agentic AI (FG-TIDA) studies trust management and interoperable identity infrastructure. Its terms of reference recognize the dynamic nature of trust in agentic systems, including behaviour, context, delegation and technical-policy compliance. The present contribution is submitted for technical discussion within that mandate, particularly trust lifecycle and human oversight integration. It is an author-proposed document, not an adopted FG-TIDA deliverable or ITU-T Recommendation.
 
 Note
 ----
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-
-Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
-deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit
-voluptatem accusantium doloremque laudantium.
-
-.. Intellectual Property Rights — section commented out. To restore it, remove the
-   leading ".." and the indentation below, and re-add a ".. raw:: latex" block with
-   "\osiacenternextsection" before the heading (to centre it on the PDF).
-
-   Intellectual Property Rights
-   ----------------------------
-
-   ITU draws attention to the possibility that the practice or implementation of this
-   Recommendation may involve the use of a claimed Intellectual Property Right. ITU takes no
-   position concerning the evidence, validity or applicability of claimed Intellectual Property
-   Rights, whether asserted by ITU members or others outside of the Recommendation development
-   process.
-
-   As of the date of approval of this Recommendation, ITU had not received notice of intellectual
-   property, protected by patents/software copyrights, which may be required to implement this
-   Recommendation. However, implementers are cautioned that this may not represent the latest
-   information and are therefore strongly urged to consult the appropriate ITU-T databases
-   available via the ITU-T website at http://www.itu.int/ITU-T/ipr/.
-   Implementers should also be aware that the organization that originated the technically
-   equivalent document listed in the Bibliography may have received notices of intellectual
-   property required for the implementation of this Recommendation.
+The requirements in this document are candidates for collective review. The work is implementation-neutral; no proprietary product or implementation is required. The UC-6 reference is preserved as a bounded source case. References to proposed themes do not imply their adoption or allocation to a working group.
 
 .. raw:: latex
 
-    %% Copyright notice commented out. To restore, uncomment the lines below.
-    %% \vspace{4em}
-    %% \begin{center}\textcopyright{} ITU 2024\end{center}
-    %%
-    %% \medskip
-    %% All rights reserved. No part of this publication may be reproduced, by any means whatsoever, without the
-    %% prior written permission of ITU.
-
-    %% Restore \addcontentsline so the TOC below (and Chapter 1 onward) populate.
-    \let\addcontentsline\osiaorigaddcontentsline
-    \sphinxtableofcontents
-    \osiamainmatter
+   \sphinxtableofcontents
+   \clearpage
+   \pagenumbering{arabic}
+   \pagestyle{normal}
 
 .. toctree::
-    :maxdepth: 3
-    :numbered:
-    :hidden:
+   :maxdepth: 2
 
-    chapters/01_chapter1
-    chapters/02_chapter2
-    chapters/03_chapter3
-    chapters/04_chapter4/index
-    chapters/05_annex/index
-    chapters/06_appendix/index
-    chapters/07_references
+   chapters/01_scope
+   chapters/02_semantic_model
+   chapters/03_requirements
+   chapters/04_assessment
+   chapters/05_coordination
+   chapters/06_references

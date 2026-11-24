@@ -5,10 +5,11 @@ source_suffix = {'.rst': 'restructuredtext'}
 master_doc = 'index'
 exclude_patterns = []
 pygments_style = 'colorful'
-project = '<acronym>'
-release = '<version>'
-html_title = "<acronym>"
-author = '<author>'
+project = 'Context-Bound Authority Applicability and Human Decision Revalidation in Agentic AI'
+release = '0.1'
+html_title = 'FG-TIDA Technical Contribution'
+smartquotes = False
+author = 'Arpita Sarker'
 
 numfig = True
 
@@ -21,10 +22,10 @@ latex_documents = [
 
 # --- Cover metadata: single source of truth for index.rst (via substitutions)
 # and the LaTeX cover (via \newcommand interpolation below). Edit here.
-cover_title    = '<acronym>'
-cover_series   = '<series or category>'
-cover_subject  = '<subject line>'
-cover_subtitle = '<subtitle of this document>'
+cover_title    = 'FG-TIDA Technical Contribution'
+cover_series   = 'Proposed technical input — not adopted'
+cover_subject  = 'First FG-TIDA meeting, Paris, 30 November–1 December 2026'
+cover_subtitle = project
 
 extensions = ['sphinxcontrib.httpdomain','sphinxcontrib.plantuml','sphinxcontrib.openapi', 'sphinx_copybutton']
 # PlantUML command. On CI (GitHub Actions / Read the Docs) the `plantuml` package
@@ -48,7 +49,7 @@ rst_prolog = '''
   :http-equiv=X-UA-Compatible: IE=9    
 
 .. |tick|   unicode:: U+2714 .. HEAVY CHECK MARK
-.. |project| replace:: OSIA
+.. |project| replace:: FG-TIDA
 .. |release| replace:: '''+release+'''
 .. |cover-title|    replace:: '''+cover_title+'''
 .. |cover-series|   replace:: '''+cover_series+'''
@@ -109,7 +110,7 @@ html_theme_options = {
 }
 html_logo = "images/TIDA_logo.png"
 html_show_sourcelink = False
-copyright = '<year>, <author>'
+copyright = '2026, Arpita Sarker'
 html_context = {'project':project, 'version':release, 'copyright': copyright}
 html_last_updated_fmt = '%b %d, %Y'
 html_extra_path = ['yaml']
@@ -189,8 +190,8 @@ latex_elements = {
     \endgroup
     \if@openright\cleardoublepage\else\clearpage\fi
   }%
-  \title{Rec. ITU-T}%
-  \release{<acronym>}%
+  \title{FG-TIDA Technical Contribution}%
+  \release{0.1}%
 }
 
 %% Hide the next \chapter heading. Used to suppress the "Overview" chapter
@@ -280,7 +281,7 @@ latex_elements = {
         {\sffamily\Large\textcolor{ituAccent}{\textbf{ITU}}\textbf{Publications}};
       \node[anchor=north west, inner sep=0pt]
         at ([xshift=1.5cm, yshift=-1.9cm]current page.north west)
-        {\sffamily\normalsize Recommendations};
+        {\sffamily\normalsize Technical contribution};
 
       %% Top-right banner: International Telecommunication Union / Standardization Sector
       \node[anchor=north east, inner sep=0pt]
@@ -306,7 +307,7 @@ latex_elements = {
       \node[anchor=north west, inner sep=0pt, text width=18cm]
         at ([xshift=1.5cm, yshift=-4.8cm]current page.north west)
         {\sffamily\hyphenpenalty=10000\exhyphenpenalty=10000\sloppy%
-         {\huge Recommendation}\\[0.4cm]
+         {\huge Technical contribution}\\[0.4cm]
          {\Huge\bfseries \coverTitle}\\[1.2cm]
          {\Large \coverSeries}\\[0.5cm]
          {\Large \coverSubject}};
@@ -368,13 +369,13 @@ def setup(app):
 
 if 'itu' in tags:
     rst_prolog += '''
-.. |osia| replace:: ITU-T <acronym>
+.. |osia| replace:: FG-TIDA Technical Contribution
 .. |specification| replace:: recommendation
 .. |chapter| replace:: clause
     '''
 else:
     rst_prolog += '''
-.. |osia| replace:: OSIA
+.. |osia| replace:: FG-TIDA
 .. |specification| replace:: specification
 .. |chapter| replace:: chapter
     '''

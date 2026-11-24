@@ -14,26 +14,26 @@ Anything you contribute is offered as input to the Working Group's work and may 
 
 ---
 
-## About this template
+## Technical contribution
 
-*When a work item is created from this template, replace this whole section with the metadata of the work item (see the skeleton below), a short description, and the link to its published site.*
+Context-Bound Authority Applicability and Human Decision Revalidation in Agentic AI
 
-This is the shared TIDA specification template: one source that builds a modern web page and a print-ready PDF, with support for diagrams and auto-generated API references. The pages below are produced by this repository, so they double as the template's documentation.
+Candidate technical requirements and assessment cases derived from UC-6. Proposed technical input, version 0.1, 24 November 2026; not adopted. Author: Arpita Sarker, Forkit AI. Working-group allocation pending.
 
-**See the template live:** [Web page](https://fg-tida.github.io/spec-template/) · [PDF](https://fg-tida.github.io/spec-template/specification.pdf)
+The RST source is in `src/doc`, with entry document `src/doc/index.rst`. All document assets are within that folder. The template build dependencies, theme, and workflows are retained. See [CONTRIBUTING.md](CONTRIBUTING.md) for build instructions.
 
-The document sources are in `src/doc/` (front matter in `index.rst`, chapters in `chapters/`). To modify the template or to learn how to build and preview it, see [CONTRIBUTING.md](CONTRIBUTING.md).
+## Source provenance
 
-Built with [CUTEspecs](https://github.com/cutespecs/cutespecs).
+Converted from the user-supplied `FG-TIDA_Arpita_Sarker_Paris_Submission_v0.1.docx` without substantive text changes. Its filename does not include `_FINAL`; no separate `_FINAL.docx` was available for comparison.
 
-### Metadata skeleton for your work item
+- DOCX SHA-256: `a709d6f23d098e082b2bbd0ddff7863a6b3dc3c32a8be33c5eba30674dd788c5`
+- Embedded PNG SHA-256: `c549bf3259a13fe97244a69c0971fc37f7ce8341bb0c7f5d7093bda767be138c`
+- Preserved: six tables (including History and Authors), one embedded diagram, all six technical sections and fifteen informative references.
 
-| Field | Value |
-| --- | --- |
-| Title | |
-| Acronym | |
-| Authors | |
-| Working Group | |
-| DataTracker record | |
-| Status | |
-| Published site | |
+No DataTracker submission has been made.
+
+## Validation
+
+The converted source passed Sphinx HTML and LaTeX generation with warnings treated as errors. Every source paragraph and every table cell was checked against the rendered HTML after whitespace normalization. The embedded diagram is byte-identical to the DOCX image, and all seven HTML pages were visually reviewed. Template examples, their sample diagram, and the sample API definition were removed. Theme assets, dependencies, and workflows are unchanged; document metadata and cover labels identify this as a proposed technical contribution.
+
+A complete PDF compilation was not performed locally because LaTeX/latexmk are not installed. The retained GitHub Actions workflow provides the template's full HTML/PDF build. GitHub Pages deployment requires the repository's Pages source to be configured for GitHub Actions. The inherited GitLab synchronization workflow requires its own secrets and is separate from document validation.
