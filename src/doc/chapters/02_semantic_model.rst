@@ -32,7 +32,7 @@ A consuming function relies on an attributed determination only within its estab
 
 Targeted revalidation means reassessing the affected determination against its decision-relevant conditions. It does not require a universal re-evaluation algorithm, nor imply that other determinations are automatically valid. If dependencies cannot be established, broader reassessment may be necessary under the responsible function's policy.
 
-.. image:: /images/context-revalidation.png
+.. image:: ../images/context-revalidation.png
    :alt: Context-bound reliance and targeted revalidation (conceptual interface).
    :width: 100%
 
